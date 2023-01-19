@@ -9,6 +9,7 @@ const App = () => {
       command: 'reset',
       callback: ({resetTranscript})=>resetTranscript()
     },
+    
       {
         command: 'open *',
       callback: (site) => {
@@ -24,20 +25,22 @@ const App = () => {
   }
 
   return (
-    <div>
+    
       
+      <div className = 'main'>
       
       <div className='MAIN_MIDLE'>
-        <button className='start' onClick={SpeechRecognition.startListening({continuous:true, language: 'en-IN'})}>Start</button>
-        <button className='start' onClick={SpeechRecognition.stopListening}>Stop</button>
-        <button className='start'  onClick={resetTranscript}>Reset</button>
-      </div> 
-      <div className='text'>
-            
-      <p >{transcript}</p>
+        <button className='btn' onClick={SpeechRecognition.startListening({continuous:true, language: 'en-IN'})}>Start</button>
+        <button className='btn' onClick={SpeechRecognition.stopListening}>Stop</button>
+        <button className='btn'  onClick={resetTranscript}>Reset</button>
+        <p className='text' >{transcript}</p>   
       </div> 
       
-    </div>
+      
+      
+      </div>
+    
+    
   );
 };
 export default App;
